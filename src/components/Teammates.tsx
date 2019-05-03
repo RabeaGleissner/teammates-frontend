@@ -10,7 +10,7 @@ interface TeammatesProps {
 
 export const Teammates: React.FunctionComponent<TeammatesProps> & {} = props => {
   return (
-    <div>
+    <div id="teammates">
       <h1>Teammates</h1>
       <ul>
         {props.teammates.map((teammate: Teammate, id: number) => teammatesListItem(teammate, id))}
@@ -20,5 +20,5 @@ export const Teammates: React.FunctionComponent<TeammatesProps> & {} = props => 
 }
 
 const teammatesListItem = (teammate: Teammate, id: number): React.ReactElement => {
-  return <li id="">{teammate.name}</li>
+  return <li key={id}>{teammate.name}</li>
 }

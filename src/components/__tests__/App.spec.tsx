@@ -1,10 +1,9 @@
 import * as React from 'react'
-import { render } from 'react-testing-library'
-
+import { mount } from 'enzyme';
 import { App } from '../App'
 
-test('App Component renders with toggle switch', () => {
-  const container = render(<App />)
+test('App renders with teammates', () => {
+  const wrapper = mount(<App />)
 
-  expect(container.getByTestId('teammates')).toBeInTheDocument()
+  expect(wrapper.find('#teammates').length).toEqual(1)
 })
